@@ -160,20 +160,21 @@ public class Game : MonoBehaviour
                     Debug.Log($"No match at index {i}: {FishFinalSound[i]} != {arr2[i]}");
                 }
 
-                if (allMatch)
-                {
-                    LevelClear = true;
-                    //EmptyFishSlots(FishSlotTone);
-                    Debug.Log("All elements match! Level clear!");
-                }
-                else
-                {
-                    LevelClear = false;
-                    Debug.Log("Not all elements match. Level not clear.");
-                }
+                
 
                 Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
+            }
+            if (allMatch)
+            {
+                LevelClear = true;
+                //EmptyFishSlots(FishSlotTone);
+                Debug.Log("All elements match! Level clear!");
+            }
+            else
+            {
+                LevelClear = false;
+                Debug.Log("Not all elements match. Level not clear.");
             }
             
         }
