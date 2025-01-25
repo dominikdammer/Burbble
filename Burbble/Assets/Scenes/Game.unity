@@ -2313,6 +2313,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836896060}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: IndexFish
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: drinkColorChanger
       value: 
       objectReference: {fileID: 49307848}
@@ -2844,6 +2848,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: IndexFish
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: drinkColorChanger
       value: 
@@ -3545,6 +3553,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: IndexFish
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: drinkColorChanger
       value: 
@@ -7129,6 +7141,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836896060}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: IndexFish
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: drinkColorChanger
       value: 
       objectReference: {fileID: 1004725576}
@@ -8071,6 +8087,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: IndexFish
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: drinkColorChanger
       value: 

@@ -19,6 +19,8 @@ public class SlotFish : MonoBehaviour, IDropHandler
         DrinkScript draggableItem = dropped.GetComponent<DrinkScript>();
         drinkColorChanger.ChangeColor(draggableItem.DrinkValue);
 
+        
+
         DrinkImage = dropped.GetComponent<Image>();
         var tempColor = DrinkImage.color;
         tempColor.a = 0f;
@@ -44,6 +46,7 @@ public class SlotFish : MonoBehaviour, IDropHandler
             draggableItem.parentAfterDrag = transform;
             draggableItem.CanDrag = false;
         }
+        game.AddDrinkToFish();
         mix.ResetDrink();
     }
 }

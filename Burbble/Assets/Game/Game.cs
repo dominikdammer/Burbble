@@ -33,13 +33,15 @@ public class Game : MonoBehaviour
     {
         LoadLevel();
         burpSound = GetComponent<AudioSource>();
+        StartCoroutine(CompareArraysWithDelay(FishFinalSound, TargetTone, delay));
     }
 
-    public void AddDrinkToFish(int[] fishSlotTone, int[] DrinkValue)
+
+    public void AddDrinkToFish()
     {
-        for (int i = 0; i < fishSlotTone.Length; i++)
+        for (int i = 0; i < FishSlotTone.Length; i++)
         {
-           FishFinalSound[i] = fishSlotTone[i] + DrinkValue[i];
+           FishFinalSound[i] = FishSlotTone[i] + DrinkValue[i];
         }
 
         Debug.Log("Array comparison complete.");
@@ -96,78 +98,82 @@ public class Game : MonoBehaviour
 
     public void PlaySequence()
     {
-        AddDrinkToFish(FishSlotTone, DrinkValue);
-        StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
+        //AddDrinkToFish(FishSlotTone, DrinkValue);
+        // StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
 
     private IEnumerator CompareArraysWithDelay(int[] FishSlot, int[] arr2, float delayTime)
     {
-        if (FishSlot.Length != arr2.Length)
+        while (true)
         {
-            Debug.LogError("Arrays have different lengths!");
-            yield break;
-        }
-
-        bool allMatch = true;
-
-
-
-
-        for (int i = 0; i < FishSlot.Length; i++)
-        {
-            if (gotDrink[i])
+            if (FishSlot.Length != arr2.Length)
             {
-                switch (FishFinalSound[i])
-                {
-                    case 1:
-                        burpSound.clip = burps[0];
-                        break;
-                    case 2:
-                        var clip = burps[1];
-                        burpSound.clip = clip;
-                        break;
-                    case 3:
-                        burpSound.clip = burps[2];
-                        break;
-                    case 4:
-                        burpSound.clip = burps[3];
-                        break;
-                    case 5:
-                        burpSound.clip = burps[4];
-                        break;
+                Debug.LogError("Arrays have different lengths!");
+                yield break;
+            }
 
-                    default:
-                        burpSound.clip = burps[0];
-                        break;
+            bool allMatch = true;
+
+
+
+
+            for (int i = 0; i < FishSlot.Length; i++)
+            {
+                if (gotDrink[i])
+                {
+                    switch (FishFinalSound[i])
+                    {
+                        case 1:
+                            burpSound.clip = burps[0];
+                            break;
+                        case 2:
+                            burpSound.clip = burps[1];
+                            break;
+                        case 3:
+                            burpSound.clip = burps[2];
+                            break;
+                        case 4:
+                            burpSound.clip = burps[3];
+                            break;
+                        case 5:
+                            burpSound.clip = burps[4];
+                            break;
+
+                        default:
+                            burpSound.clip = burps[0];
+                            break;
+                    }
+                    burpSound.Play();
+
+                    if (FishSlot[i] == arr2[i])
+                    {
+                        Debug.Log($"Match found at index {i}: {FishSlot[i]}");
+
+                    }
+                    else
+                    {
+                        allMatch = false;
+                        Debug.Log($"No match at index {i}: {FishSlot[i]} != {arr2[i]}");
+                    }
+                    
                 }
-                burpSound.Play();
 
-                if (FishSlot[i] == arr2[i])
+                if (allMatch)
                 {
-                    Debug.Log($"Match found at index {i}: {FishSlot[i]}");
-
+                    LevelClear = true;
+                    EmptyFishSlots(FishSlotTone);
+                    Debug.Log("All elements match! Level clear!");
                 }
                 else
                 {
-                    allMatch = false;
-                    Debug.Log($"No match at index {i}: {FishSlot[i]} != {arr2[i]}");
+                    LevelClear = false;
+                    Debug.Log("Not all elements match. Level not clear.");
                 }
+
+                Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
             }
-
-            if (allMatch)
-            {
-                LevelClear = true;
-                EmptyFishSlots(FishSlotTone);
-                Debug.Log("All elements match! Level clear!");
-            }
-            else
-            {
-                LevelClear = false;
-                Debug.Log("Not all elements match. Level not clear.");
-            }
-
-            Debug.Log("Array comparison complete.");
+            
         }
     }
 }
