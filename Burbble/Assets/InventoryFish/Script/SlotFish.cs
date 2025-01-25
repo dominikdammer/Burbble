@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SlotFish : MonoBehaviour, IDropHandler
 {
-    public SlotIngredient[] SlotIngredient;
+    //public SlotIngredient[] SlotIngredient;
     public Mix mix;
     public Game game;
     public int IndexFish;
@@ -34,10 +34,10 @@ public class SlotFish : MonoBehaviour, IDropHandler
             draggableItem.CanDrag = false;
         }
 
-        for(int i = 0; i < SlotIngredient.Length; i++)
-        {
-            SlotIngredient[i].ResetIngredient();
-        }
+        // for(int i = 0; i < SlotIngredient.Length; i++)
+        // {
+        //     SlotIngredient[i].ResetIngredient();
+        // }
         mix.ResetDrink();
     }
 }
