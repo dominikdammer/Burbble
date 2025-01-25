@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class Mix : MonoBehaviour, IDropHandler
 {
+    public GameObject Drink;
+    public Transform ParentTransform;
     // Aktueller Drink-Wert
     public int currentDrinkValue = 0;
     private int ingredientCount = 1;
@@ -37,6 +39,12 @@ public class Mix : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         Ingredient Ingredient = dropped.GetComponent<Ingredient>();
         AddToDrinkValue(Ingredient.Value);
+        if(ParentTransform.childCount == 0)
+        {
+            GameObject DrinkMix = Instantiate(Drink, ParentTransform);
+            DrinkMix.transform.SetParent(ParentTransform);
+        }
+        
         GetComponentInChildren<DrinkScript>().DrinkValue = currentDrinkValue;
         Destroy(dropped);
     }
