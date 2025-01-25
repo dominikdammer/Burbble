@@ -29,4 +29,8 @@ public class Mix : MonoBehaviour
         currentDrinkValue = 0;
         ingredientCount = 1;
     }
+    public int GetDrinkValue()
+    {
+        return currentDrinkValue;
+    }
 }

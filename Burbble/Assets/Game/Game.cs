@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField] public Level[] levels;
     public int[] FishSlotTone;
     public int[] FishSlotToneWithDrink;
     public int[] TargetTone;
@@ -15,6 +16,10 @@ public class Game : MonoBehaviour
     public bool LevelClear = false;
 
     public int[] DrinkValue;
+
+    public int LevelIndex;
+
+    Mix mix;
 
     void Start()
     {
@@ -32,6 +37,25 @@ public class Game : MonoBehaviour
         Debug.Log("Array comparison complete.");
     }
 
+    public void AssigneDrink(int Index)
+    {
+        DrinkValue[Index] = mix.GetDrinkValue();
+        mix.ResetDrink();
+    }
+
+    public void LoadNextLevel()
+    {
+        LevelIndex++;
+        for (int i = 0; i < FishSlotTone.Length; i++)
+        {
+            FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
+        }
+        for (int i = 0; i < TargetTone.Length; i++)
+        {
+            TargetTone[i] = levels[LevelIndex].intZieltöne[i];
+        }
+        Debug.Log("New Level loaded");
+    }
     public void EmptyFishSlots(int[] arr1)
     {
         for (int i = 0; i < arr1.Length; i++)
