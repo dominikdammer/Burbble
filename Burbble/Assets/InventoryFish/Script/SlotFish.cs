@@ -7,10 +7,15 @@ public class SlotFish : MonoBehaviour, IDropHandler
 {
     public SlotIngredient[] SlotIngredient;
     public Mix mix;
+    public Game game;
+    public int IndexFish;
+    public int DrinkValue;
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
         DrinkScript draggableItem = dropped.GetComponent<DrinkScript>();
+
+        game.AssigneDrink(IndexFish);
 
         if (draggableItem == null)
         {

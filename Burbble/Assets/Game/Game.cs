@@ -19,13 +19,11 @@ public class Game : MonoBehaviour
 
     public int LevelIndex;
 
-    Mix mix;
+    public Mix mix;
 
     void Start()
     {
         LoadLevel();
-        AddDrinkToFish(FishSlotTone, DrinkValue);
-        StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
 
     public void AddDrinkToFish(int[] arr1, int[] arr2)
@@ -77,6 +75,12 @@ public class Game : MonoBehaviour
             FishSlotTone[i] = 0;
         }
         LevelClear = false;
+    }
+
+    public void PlaySequence()
+    {
+        AddDrinkToFish(FishSlotTone, DrinkValue);
+        StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
 
     private IEnumerator CompareArraysWithDelay(int[] FischSlotArray, int[] arr2, float delayTime)
