@@ -7,17 +7,26 @@ public class Mix : MonoBehaviour
     [SerializeField] public int drinkValue3;
     // Aktueller Drink-Wert
     private int currentDrinkValue = 0;
+    private int ingredientCount = 1;
 
     // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzufügen
     public void AddToDrinkValue(int value)
     {
-        currentDrinkValue += value;
-        Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
+        if (ingredientCount <= 3)
+        {
+            currentDrinkValue += value;
+            Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
+            ingredientCount++;
+        }
+        else
+        {
+            Debug.Log($"Zu viele Zutaten");
+        }
     }
 
-    // Methode, um den aktuellen Drink-Wert abzurufen
-    public int GetCurrentDrinkValue()
+    public void ResetDrink()
     {
-        return currentDrinkValue;
+        currentDrinkValue = 0;
+        ingredientCount = 1;
     }
 }
