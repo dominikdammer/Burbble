@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ingredients
+    uniqueID: 4230529905
+    locked: 0
+  - name: Mixer
+    uniqueID: 184118017
+    locked: 0
+  - name: Fish
+    uniqueID: 4272652977
+    locked: 0

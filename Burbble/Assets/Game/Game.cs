@@ -11,6 +11,8 @@ public class Game : MonoBehaviour
     public int[] FishSlotTone;
     public int[] FishSlotToneWithDrink;
     public int[] TargetTone;
+    public GameObject[] FishSlots;
+    [SerializeField] public Sprite[] FishSprites;
     public float delay = 1.0f;
 
     public bool LevelClear = false;
@@ -19,12 +21,11 @@ public class Game : MonoBehaviour
 
     public int LevelIndex;
 
-    Mix mix;
+    public Mix mix;
 
     void Start()
     {
-        AddDrinkToFish(FishSlotTone, DrinkValue);
-        StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
+        LoadLevel();
     }
 
     public void AddDrinkToFish(int[] arr1, int[] arr2)
@@ -43,18 +44,38 @@ public class Game : MonoBehaviour
         mix.ResetDrink();
     }
 
-    public void LoadNextLevel()
+    public void LoadLevel()
     {
-        LevelIndex++;
         for (int i = 0; i < FishSlotTone.Length; i++)
         {
             FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
+            if(FishSlotTone[i] == 1)
+            {
+                FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[0];
+
+            }
+            if(FishSlotTone[i] == 2)
+            {
+                FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[1];
+
+            }
+            if(FishSlotTone[i] == 3)
+            {
+                FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[2];
+
+            }
         }
         for (int i = 0; i < TargetTone.Length; i++)
         {
-            TargetTone[i] = levels[LevelIndex].intZieltöne[i];
+            TargetTone[i] = levels[LevelIndex].intZieltone[i];
         }
         Debug.Log("New Level loaded");
+    }
+
+    public void LoadNextLevel()
+    {
+        LevelIndex++;
+        LoadLevel();
     }
     public void EmptyFishSlots(int[] arr1)
     {
@@ -63,6 +84,12 @@ public class Game : MonoBehaviour
             FishSlotTone[i] = 0;
         }
         LevelClear = false;
+    }
+
+    public void PlaySequence()
+    {
+        AddDrinkToFish(FishSlotTone, DrinkValue);
+        StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
 
     private IEnumerator CompareArraysWithDelay(int[] FischSlotArray, int[] arr2, float delayTime)
