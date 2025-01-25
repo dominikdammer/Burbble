@@ -2926,6 +2926,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d34083800c9de04ca91ebd9fbbbb4ae, type: 2}
   - {fileID: 11400000, guid: b43e21112d4e55f45b6772c400a63d6b, type: 2}
   - {fileID: 11400000, guid: 0f37cbfdff284d04ba5de36872d0b4da, type: 2}
+  - {fileID: 11400000, guid: 25e5414ede0c5024c94ff69a7aa0f80a, type: 2}
+  - {fileID: 11400000, guid: 88b8ed53cee79bf44bddc6483989ec51, type: 2}
+  - {fileID: 11400000, guid: eceacb4b93cc87c49bbf7592038e507e, type: 2}
+  - {fileID: 11400000, guid: b5f35130916da054cac9460fef6a1573, type: 2}
+  - {fileID: 11400000, guid: 8cad04af8ee0c5448a51d37c3a6e3fb1, type: 2}
+  - {fileID: 11400000, guid: f157ef4a93bceac42a308959a1184f03, type: 2}
+  - {fileID: 11400000, guid: c86a58fadbbb4e9479bcc43bf9e9e294, type: 2}
   FishSlotTone: 010000000100000001000000020000000200000001000000
   FishSlotToneWithDrink: 000000000000000000000000000000000000000000000000
   TargetTone: 020000000200000002000000030000000400000002000000
@@ -5127,50 +5134,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1650943035
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1650943037}
-  - component: {fileID: 1650943036}
-  m_Layer: 0
-  m_Name: Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1650943036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650943035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1650943037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650943035}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670959474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7039,7 +7002,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 959690132}
-  - {fileID: 1650943037}
   - {fileID: 836896061}
   - {fileID: 1001366459}
   - {fileID: 2037518785}
