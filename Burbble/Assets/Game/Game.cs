@@ -165,11 +165,12 @@ public class Game : MonoBehaviour
                 Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
             }
-            if (allMatch)
+            if (allMatch && AllDrinksCollected())
             {
                 LevelClear = true;
                 //EmptyFishSlots(FishSlotTone);
                 Debug.Log("All elements match! Level clear!");
+                LoadNextLevel();
             }
             else
             {
@@ -178,5 +179,14 @@ public class Game : MonoBehaviour
             }
             
         }
+    }
+
+    private bool AllDrinksCollected()
+    {
+        foreach (bool drink in gotDrink)
+        {
+            if (!drink) return false;
+        }
+        return true;
     }
 }
