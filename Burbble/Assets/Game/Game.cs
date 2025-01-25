@@ -97,12 +97,6 @@ public class Game : MonoBehaviour
         LevelClear = false;
     }
 
-    public void PlaySequence()
-    {
-        //AddDrinkToFish(FishSlotTone, DrinkValue);
-        // StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
-    }
-
     private IEnumerator CompareArraysWithDelay(int[] FishSlot, int[] arr2, float delayTime)
     {
         while (true)
@@ -145,9 +139,12 @@ public class Game : MonoBehaviour
                             break;
                     }
                     burpSound.Play();
-
                     
-                    
+                }
+                if (gotDrink[i])
+                {
+                    // FishSlots[i].GetComponent<FloatingObject>().amplitude = .5f;
+                    FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.5f);
                 }
                 if (FishFinalSound[i] == arr2[i])
                 {
@@ -164,6 +161,8 @@ public class Game : MonoBehaviour
 
                 Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
+                // FishSlots[i].GetComponent<FloatingObject>().amplitude = .1f;
+                FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.1f);
             }
             if (allMatch && AllDrinksCollected())
             {

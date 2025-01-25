@@ -21,6 +21,10 @@ public class FloatingObject : MonoBehaviour
 
     float prewarmModifier;
 
+    private float targetAmplitude;
+    private bool isAmplitudeChanging = false;
+    public float upwardSpeed = 2f;
+
     // Use this for initialization
     void Start()
     {
@@ -28,6 +32,8 @@ public class FloatingObject : MonoBehaviour
         posOffset = transform.position;
 
         prewarmModifier = Random.Range(0.0f, 0.9f);
+
+        targetAmplitude = amplitude;
     }
 
     // Update is called once per frame
@@ -46,8 +52,28 @@ public class FloatingObject : MonoBehaviour
         {
             tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
         }
+
+        if (isAmplitudeChanging)
+        {
+            // Smoothly interpolate the amplitude toward the target
+            amplitude = Mathf.MoveTowards(amplitude, targetAmplitude, Time.deltaTime * upwardSpeed);
+
+            // Adjust position upwards proportionally to the change in amplitude
+            tempPos.y += upwardSpeed * Time.deltaTime;
+
+            // Stop moving upward once amplitude matches the target
+            if (Mathf.Approximately(amplitude, targetAmplitude))
+            {
+                isAmplitudeChanging = false;
+            }
+        }
       
 
         transform.position = tempPos;
+    }
+    public void SetAmplitude(float newAmplitude)
+    {
+        targetAmplitude = newAmplitude;
+        isAmplitudeChanging = true;
     }
 }
