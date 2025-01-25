@@ -5,6 +5,7 @@ public class Mix : MonoBehaviour, IDropHandler
 {
     public GameObject Drink;
     public Transform ParentTransform;
+    public SlotIngredient[] SlotIngredient;
     // Aktueller Drink-Wert
     public int currentDrinkValue = 0;
     private int ingredientCount = 1;
@@ -47,5 +48,9 @@ public class Mix : MonoBehaviour, IDropHandler
         
         GetComponentInChildren<DrinkScript>().DrinkValue = currentDrinkValue;
         Destroy(dropped);
+        for(int i = 0; i < SlotIngredient.Length; i++)
+        {
+            SlotIngredient[i].ResetIngredient();
+        }
     }
 }

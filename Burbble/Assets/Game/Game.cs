@@ -4,16 +4,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] public Level[] levels;
     public int[] FishSlotTone;
-    public int[] FishSlotToneWithDrink;
+    public int[] FishFinalSound;
     public int[] TargetTone;
     public GameObject[] FishSlots;
     [SerializeField] public Sprite[] FishSprites;
+    [SerializeField] public AudioClip[] burps;
     public float delay = 1.0f;
+
+    public bool[] gotDrink;
 
     public bool LevelClear = false;
 
@@ -23,16 +27,19 @@ public class Game : MonoBehaviour
 
     public Mix mix;
 
+    AudioSource burpSound;
+
     void Start()
     {
         LoadLevel();
+        burpSound = GetComponent<AudioSource>();
     }
 
-    public void AddDrinkToFish(int[] arr1, int[] arr2)
+    public void AddDrinkToFish(int[] fishSlotTone, int[] DrinkValue)
     {
-        for (int i = 0; i < arr1.Length; i++)
+        for (int i = 0; i < fishSlotTone.Length; i++)
         {
-           FishSlotToneWithDrink[i] = arr1[i] + arr2[i];
+           FishFinalSound[i] = fishSlotTone[i] + DrinkValue[i];
         }
 
         Debug.Log("Array comparison complete.");
@@ -42,6 +49,7 @@ public class Game : MonoBehaviour
     {
         DrinkValue[Index] = mix.GetDrinkValue();
         mix.ResetDrink();
+        gotDrink[Index] = true;
     }
 
     public void LoadLevel()
@@ -92,9 +100,9 @@ public class Game : MonoBehaviour
         StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
 
-    private IEnumerator CompareArraysWithDelay(int[] FischSlotArray, int[] arr2, float delayTime)
+    private IEnumerator CompareArraysWithDelay(int[] FishSlot, int[] arr2, float delayTime)
     {
-        if (FischSlotArray.Length != arr2.Length)
+        if (FishSlot.Length != arr2.Length)
         {
             Debug.LogError("Arrays have different lengths!");
             yield break;
@@ -102,32 +110,64 @@ public class Game : MonoBehaviour
 
         bool allMatch = true;
 
-        for (int i = 0; i < FischSlotArray.Length; i++)
+
+
+
+        for (int i = 0; i < FishSlot.Length; i++)
         {
-            if (FischSlotArray[i] == arr2[i])
+            if (gotDrink[i])
             {
-                Debug.Log($"Match found at index {i}: {FischSlotArray[i]}");
+                switch (FishFinalSound[i])
+                {
+                    case 1:
+                        burpSound.clip = burps[0];
+                        break;
+                    case 2:
+                        var clip = burps[1];
+                        burpSound.clip = clip;
+                        break;
+                    case 3:
+                        burpSound.clip = burps[2];
+                        break;
+                    case 4:
+                        burpSound.clip = burps[3];
+                        break;
+                    case 5:
+                        burpSound.clip = burps[4];
+                        break;
+
+                    default:
+                        burpSound.clip = burps[0];
+                        break;
+                }
+                burpSound.Play();
+
+                if (FishSlot[i] == arr2[i])
+                {
+                    Debug.Log($"Match found at index {i}: {FishSlot[i]}");
+
+                }
+                else
+                {
+                    allMatch = false;
+                    Debug.Log($"No match at index {i}: {FishSlot[i]} != {arr2[i]}");
+                }
+                yield return new WaitForSeconds(delayTime);
+            }
+
+            if (allMatch)
+            {
+                LevelClear = true;
+                EmptyFishSlots(FishSlotTone);
+                Debug.Log("All elements match! Level clear!");
             }
             else
             {
-                allMatch = false;
-                Debug.Log($"No match at index {i}: {FischSlotArray[i]} != {arr2[i]}");
+                LevelClear = false;
+                Debug.Log("Not all elements match. Level not clear.");
             }
-            yield return new WaitForSeconds(delayTime);
-        }
-
-        if (allMatch)
-        {
-            LevelClear = true;
-            EmptyFishSlots(FishSlotTone);
-            Debug.Log("All elements match! Level clear!");
-        }
-        else
-        {
-            LevelClear = false;
-            Debug.Log("Not all elements match. Level not clear.");
-        }
 
             Debug.Log("Array comparison complete.");
         }
+    }
 }

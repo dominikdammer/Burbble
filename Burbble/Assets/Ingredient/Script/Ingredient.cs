@@ -15,12 +15,35 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private void Awake() {
         ImageIngredient = this.GetComponent<Image>();
         CameraMain = Camera.main;
+
+        GameObject targetObject = GameObject.Find("CanvasMixer");
+
+        if (targetObject != null)
+        {
+            MixerCanvas = targetObject.transform;
+            Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
+        }
+        else
+        {
+            Debug.LogError("TargetObject not found in the scene!");
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
+        GameObject targetObject = GameObject.Find("CanvasMixer");
+
+        if (targetObject != null)
+        {
+            MixerCanvas = targetObject.transform;
+            Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
+        }
+        else
+        {
+            Debug.LogError("TargetObject not found in the scene!");
+        }
         transform.SetParent(MixerCanvas);
         transform.SetAsLastSibling();
         ImageIngredient.raycastTarget = false;
