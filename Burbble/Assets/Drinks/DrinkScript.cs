@@ -9,6 +9,7 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public int DrinkValue;
     private Image ImageDrink;
     private Camera CameraMain;
+    public bool CanDrag = true;
     [HideInInspector] public Transform parentAfterDrag;
 
     private void Awake() {
@@ -17,6 +18,10 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!CanDrag)
+        {
+            return;
+        }
         Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -26,6 +31,10 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!CanDrag)
+        {
+            return;
+        }
          Vector3 screenPosition = Input.mousePosition;
 
         screenPosition.z = CameraMain.WorldToScreenPoint(transform.position).z;
@@ -37,17 +46,5 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         Debug.Log("end drag");
         transform.SetParent(parentAfterDrag);
         ImageDrink.raycastTarget = true;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -6,17 +6,23 @@ using UnityEngine.UI;
 
 public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public Image ImageDrink;
-    public Camera CameraMain;
+    private Image ImageIngredient;
+    private Camera CameraMain;
     public int Value;
     [HideInInspector] public Transform parentAfterDrag;
+
+    private void Awake() {
+        ImageIngredient = this.GetComponent<Image>();
+        CameraMain = Camera.main;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
-        ImageDrink.raycastTarget = false;
+        ImageIngredient.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,18 +37,6 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     {
         Debug.Log("end drag");
         transform.SetParent(parentAfterDrag);
-        ImageDrink.raycastTarget = true;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ImageIngredient.raycastTarget = true;
     }
 }
