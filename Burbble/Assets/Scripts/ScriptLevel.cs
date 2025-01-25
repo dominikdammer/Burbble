@@ -8,5 +8,8 @@ public class Level : ScriptableObject
 
     [Header("Zieltöne (6 Werte)")]
     public int[] intZieltöne = new int[6];
+
+    [Header("UI-Asset")]
+    public Sprite uiImage;
 }
 
