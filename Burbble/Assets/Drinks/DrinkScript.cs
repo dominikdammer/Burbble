@@ -68,4 +68,10 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
         
     }
+
+    public void ResetDrink()
+    {
+        DrinkValue = 0;
+        Destroy(gameObject);
+    }
 }

@@ -16,7 +16,7 @@ public class DrinkColorChanger : MonoBehaviour
     void Start()
     {
         sprite= GetComponent<SpriteRenderer>();
-        ChangeColor();
+        //ChangeColor();
     }
 
     public void EnableDrinkContent()
@@ -24,11 +24,12 @@ public class DrinkColorChanger : MonoBehaviour
         sprite.enabled = true;
     }
 
-    public void ChangeColor()
+    public void ChangeColor(int DrinkValue)
     {
         if (DrinkColors != null)
         {
-            pickedColor = DrinkColors[Mathf.Abs((Random.Range(0, DrinkColors.Length)))];
+            //pickedColor = DrinkColors[Mathf.Abs((Random.Range(0, DrinkColors.Length)))];
+            pickedColor = DrinkColors[DrinkValue];
 
             sprite.color = new Color(pickedColor.r, pickedColor.g, pickedColor.b,1);
 
