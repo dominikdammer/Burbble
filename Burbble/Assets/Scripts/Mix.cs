@@ -1,15 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Mix : MonoBehaviour
+public class Mix : MonoBehaviour, IDropHandler
 {
-    [SerializeField] public int drinkValue1;
-    [SerializeField] public int drinkValue2;
-    [SerializeField] public int drinkValue3;
     // Aktueller Drink-Wert
-    private int currentDrinkValue = 0;
+    public int currentDrinkValue = 0;
     private int ingredientCount = 1;
 
-    // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzufügen
+    // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzufï¿½gen
     public void AddToDrinkValue(int value)
     {
         if (ingredientCount <= 3)
@@ -32,5 +30,14 @@ public class Mix : MonoBehaviour
     public int GetDrinkValue()
     {
         return currentDrinkValue;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        GameObject dropped = eventData.pointerDrag;
+        Ingredient Ingredient = dropped.GetComponent<Ingredient>();
+        AddToDrinkValue(Ingredient.Value);
+        GetComponentInChildren<DrinkScript>().DrinkValue = currentDrinkValue;
+        Destroy(dropped);
     }
 }

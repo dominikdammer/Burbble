@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    public int DrinkValue;
     public Image ImageDrink;
     public Camera CameraMain;
     [HideInInspector] public Transform parentAfterDrag;
