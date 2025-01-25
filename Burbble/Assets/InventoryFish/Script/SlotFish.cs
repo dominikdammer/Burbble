@@ -33,11 +33,6 @@ public class SlotFish : MonoBehaviour, IDropHandler
             draggableItem.parentAfterDrag = transform;
             draggableItem.CanDrag = false;
         }
-
-        // for(int i = 0; i < SlotIngredient.Length; i++)
-        // {
-        //     SlotIngredient[i].ResetIngredient();
-        // }
         mix.ResetDrink();
     }
 }
