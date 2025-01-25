@@ -239,7 +239,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 1586257996}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 20634690}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -254,8 +275,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -541,7 +562,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 1124051715}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 61406261}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -556,8 +598,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1466,7 +1508,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 323386748}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 351670025}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -1481,8 +1544,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1721,7 +1784,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 2144091408}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 438123213}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -1736,8 +1820,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2102,6 +2186,7 @@ GameObject:
   - component: {fileID: 686703598}
   - component: {fileID: 686703597}
   - component: {fileID: 686703600}
+  - component: {fileID: 686703601}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2227,6 +2312,22 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &686703601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686703596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &712823731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2445,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 111276417}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 712823736}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -2359,8 +2481,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4814,7 +4936,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleEffect: {fileID: 7158079738110074677, guid: 6bbaafdb1739f884d8e59cbc95e7b253, type: 3}
   burpPos: {fileID: 351121215}
-  burpSound: {fileID: 0}
+  burpSounds:
+  - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  - {fileID: 8300000, guid: 95df38d1d3e647b4f9721453170f7299, type: 3}
+  - {fileID: 8300000, guid: e8184ac8562fd4346ab911016f001171, type: 3}
+  - {fileID: 8300000, guid: 8f3dc30bd7dc1bd46850deaad2d2e5c7, type: 3}
+  - {fileID: 8300000, guid: 369555baf2beda04ba1d5b7094084a7b, type: 3}
+  - {fileID: 8300000, guid: 252cd8a7b49232d4eab5a8b0011b1fc8, type: 3}
+  - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
+  - {fileID: 8300000, guid: b8c2cf41166d33a4e9d82ae8cf999d41, type: 3}
+  - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
+  - {fileID: 8300000, guid: 6a8fe836850cc5942b4f674d3c4cb2c4, type: 3}
+  - {fileID: 8300000, guid: 7373cce2cb66adf4b92dad180c441818, type: 3}
+  - {fileID: 8300000, guid: 5d4a2a3441e8e324781a3d32b3d291a3, type: 3}
+  - {fileID: 8300000, guid: b755fae389073bb42b4ad5b121c0153d, type: 3}
+  - {fileID: 8300000, guid: e4ac034b313b0094593cc4a7276aff67, type: 3}
+  - {fileID: 8300000, guid: 8915ac2bb06888b4b90e71cc4226fdd7, type: 3}
+  - {fileID: 8300000, guid: e33054495e9844b4fbecbbe4a736438f, type: 3}
+  - {fileID: 8300000, guid: cd40eb33545f271479428f5c5e04d687, type: 3}
+  - {fileID: 8300000, guid: 83610167e4afdea4b9360bd3c5fd2fd0, type: 3}
+  - {fileID: 8300000, guid: 646c631c7240d714794a8d60c6711dce, type: 3}
+  - {fileID: 8300000, guid: faceff403d344b444abf5657cb7ce1fc, type: 3}
+  burpy: {fileID: 1797279576}
   magn: 4
   rough: 4
   fadeIn: 0
@@ -4829,8 +4972,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d04ac9daabe82364ba1b0ff1a2c3f0a1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
