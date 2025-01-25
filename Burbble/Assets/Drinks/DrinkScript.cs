@@ -10,6 +10,7 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     private Image ImageDrink;
     private Camera CameraMain;
     public bool CanDrag = true;
+    public Transform MixerCanvas;
     [HideInInspector] public Transform parentAfterDrag;
 
     private void Awake() {
@@ -24,7 +25,7 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
         Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(transform.parent);
         transform.SetAsLastSibling();
         ImageDrink.raycastTarget = false;
     }
