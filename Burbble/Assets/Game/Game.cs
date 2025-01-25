@@ -49,17 +49,17 @@ public class Game : MonoBehaviour
         for (int i = 0; i < FishSlotTone.Length; i++)
         {
             FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
-            if(FishSlotTone[i] == 0)
+            if(FishSlotTone[i] == 1)
             {
                 FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[0];
 
             }
-            if(FishSlotTone[i] == 1)
+            if(FishSlotTone[i] == 2)
             {
                 FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[1];
 
             }
-            if(FishSlotTone[i] == 2)
+            if(FishSlotTone[i] == 3)
             {
                 FishSlots[i].GetComponent<SpriteRenderer>().sprite = FishSprites[2];
 
