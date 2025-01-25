@@ -23,6 +23,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        LoadLevel();
         AddDrinkToFish(FishSlotTone, DrinkValue);
         StartCoroutine(CompareArraysWithDelay(FishSlotTone, TargetTone, delay));
     }
@@ -43,6 +44,19 @@ public class Game : MonoBehaviour
         mix.ResetDrink();
     }
 
+    public void LoadLevel()
+    {
+        for (int i = 0; i < FishSlotTone.Length; i++)
+        {
+            FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
+        }
+        for (int i = 0; i < TargetTone.Length; i++)
+        {
+            TargetTone[i] = levels[LevelIndex].intZieltone[i];
+        }
+        Debug.Log("New Level loaded");
+    }
+
     public void LoadNextLevel()
     {
         LevelIndex++;
@@ -52,7 +66,7 @@ public class Game : MonoBehaviour
         }
         for (int i = 0; i < TargetTone.Length; i++)
         {
-            TargetTone[i] = levels[LevelIndex].intZieltöne[i];
+            TargetTone[i] = levels[LevelIndex].intZieltone[i];
         }
         Debug.Log("New Level loaded");
     }

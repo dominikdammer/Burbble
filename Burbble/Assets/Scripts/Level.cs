@@ -6,8 +6,8 @@ public class Level : ScriptableObject
     [Header("Fischarten (6 Werte)")]
     public int[] intFischarten = new int[6];
 
-    [Header("Zieltöne (6 Werte)")]
-    public int[] intZieltöne = new int[6];
+    [Header("Zieltone (6 Werte)")]
+    public int[] intZieltone = new int[6];
 
     [Header("UI-Asset")]
     public Sprite uiImage;
