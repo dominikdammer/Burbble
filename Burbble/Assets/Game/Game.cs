@@ -28,6 +28,7 @@ public class Game : MonoBehaviour
     public Mix mix;
 
     AudioSource burpSound;
+    
 
     void Start()
     {
@@ -106,14 +107,14 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
-            if (FishSlot.Length != arr2.Length)
+            if (FishFinalSound.Length != arr2.Length)
             {
                 Debug.LogError("Arrays have different lengths!");
                 yield break;
             }
 
+            
             bool allMatch = true;
-
 
 
 
@@ -145,23 +146,24 @@ public class Game : MonoBehaviour
                     }
                     burpSound.Play();
 
-                    if (FishSlot[i] == arr2[i])
-                    {
-                        Debug.Log($"Match found at index {i}: {FishSlot[i]}");
-
-                    }
-                    else
-                    {
-                        allMatch = false;
-                        Debug.Log($"No match at index {i}: {FishSlot[i]} != {arr2[i]}");
-                    }
                     
+                    
+                }
+                if (FishFinalSound[i] == arr2[i])
+                {
+                    Debug.Log($"Match found at index {i}: {FishFinalSound[i]}");
+
+                }
+                else
+                {
+                    allMatch = false;
+                    Debug.Log($"No match at index {i}: {FishFinalSound[i]} != {arr2[i]}");
                 }
 
                 if (allMatch)
                 {
                     LevelClear = true;
-                    EmptyFishSlots(FishSlotTone);
+                    //EmptyFishSlots(FishSlotTone);
                     Debug.Log("All elements match! Level clear!");
                 }
                 else
