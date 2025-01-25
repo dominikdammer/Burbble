@@ -8,12 +8,12 @@ public class Mix : MonoBehaviour, IDropHandler
     public SlotIngredient[] SlotIngredient;
     // Aktueller Drink-Wert
     public int currentDrinkValue = 0;
-    private int ingredientCount = 1;
+    [SerializeField] private int ingredientCount = 1;
 
     // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzuf�gen
     public void AddToDrinkValue(int value)
     {
-        if (ingredientCount <= 3)
+        if (ingredientCount < 3)
         {
             currentDrinkValue += value;
             Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
