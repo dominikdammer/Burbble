@@ -75,15 +75,7 @@ public class Game : MonoBehaviour
     public void LoadNextLevel()
     {
         LevelIndex++;
-        for (int i = 0; i < FishSlotTone.Length; i++)
-        {
-            FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
-        }
-        for (int i = 0; i < TargetTone.Length; i++)
-        {
-            TargetTone[i] = levels[LevelIndex].intZieltone[i];
-        }
-        Debug.Log("New Level loaded");
+        LoadLevel();
     }
     public void EmptyFishSlots(int[] arr1)
     {

@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 235
-  m_Sprite: {fileID: 21300000, guid: a2f52a2df2a56754889986bf72cfa68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e46e48ab2da6c6429cebfd1cd2b1bbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 172649343}
   - component: {fileID: 172649342}
   m_Layer: 0
-  m_Name: Fish1NormalFish
+  m_Name: FishImage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 316296266}
   - component: {fileID: 316296265}
   m_Layer: 0
-  m_Name: Fish2Anglerfish (1)
+  m_Name: FishImage6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1951,7 +1951,7 @@ GameObject:
   - component: {fileID: 598711406}
   - component: {fileID: 598711405}
   m_Layer: 0
-  m_Name: Fish2Anglerfish (1)
+  m_Name: FishImage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 690258865}
   - component: {fileID: 690258864}
   m_Layer: 0
-  m_Name: Fish3TriangleFish
+  m_Name: FishImage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,9 +2944,12 @@ MonoBehaviour:
   - {fileID: 1169635089}
   - {fileID: 316296263}
   FishSprites:
-  - {fileID: 21300000, guid: 6cef2ac7c12e21040b78ba668934e44f, type: 3}
-  - {fileID: 21300000, guid: 56bc3f9b68e05e14c931ba0ee45b9812, type: 3}
-  - {fileID: 21300000, guid: 0e084c4de434d674baecb79833feaf98, type: 3}
+  - {fileID: 21300000, guid: 4061bd21ff7a0a94f95b4a272e097f17, type: 3}
+  - {fileID: 21300000, guid: ecc605fc9fd7d344aa4af971d2193e53, type: 3}
+  - {fileID: 21300000, guid: ad257d49a7ebc9b46b83a06e5be264d1, type: 3}
+  - {fileID: 21300000, guid: eef6d1b6221cc7e44a7a5bb3a7ea3ee6, type: 3}
+  - {fileID: 21300000, guid: 6386ca7de0871dc4c8aff03937e95587, type: 3}
+  - {fileID: 21300000, guid: 6affc1f1149092b4e909ff26cfd83d72, type: 3}
   delay: 1
   LevelClear: 0
   DrinkValue: 000000000000000000000000000000000000000000000000
@@ -4021,7 +4024,7 @@ GameObject:
   - component: {fileID: 1169635092}
   - component: {fileID: 1169635091}
   m_Layer: 0
-  m_Name: Fish3TriangleFish
+  m_Name: FishImage5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4362,7 +4365,7 @@ GameObject:
   - component: {fileID: 1249774482}
   - component: {fileID: 1249774481}
   m_Layer: 0
-  m_Name: Fish1NormalFish
+  m_Name: FishImage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
