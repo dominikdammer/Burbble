@@ -7,9 +7,14 @@ using UnityEngine.UI;
 public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public int DrinkValue;
-    public Image ImageDrink;
-    public Camera CameraMain;
+    private Image ImageDrink;
+    private Camera CameraMain;
     [HideInInspector] public Transform parentAfterDrag;
+
+    private void Awake() {
+        ImageDrink = this.GetComponent<Image>();
+        CameraMain = Camera.main;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("begin drag");
