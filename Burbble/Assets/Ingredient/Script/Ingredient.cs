@@ -9,6 +9,7 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private Image ImageIngredient;
     private Camera CameraMain;
     public int Value;
+    public Transform IngredientCanvas;
     [HideInInspector] public Transform parentAfterDrag;
 
     private void Awake() {
@@ -20,7 +21,7 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     {
         Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(IngredientCanvas);
         transform.SetAsLastSibling();
         ImageIngredient.raycastTarget = false;
     }
