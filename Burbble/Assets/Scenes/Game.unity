@@ -2313,6 +2313,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836896060}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 49307848}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
       objectReference: {fileID: 1914443990}
@@ -2840,6 +2844,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 1023866884}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
@@ -3433,6 +3441,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 355541784}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
@@ -6720,6 +6732,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836896060}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 89654858}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
       objectReference: {fileID: 1914443990}
@@ -7008,6 +7024,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 1004725576}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
@@ -7947,6 +7967,10 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 836896060}
+    - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
+      propertyPath: drinkColorChanger
+      value: 
+      objectReference: {fileID: 1100055375}
     - target: {fileID: 2523490485969053246, guid: 6ea0a95b06bc75241993a2afc0b68110, type: 3}
       propertyPath: SlotIngredient.Array.data[0]
       value: 
