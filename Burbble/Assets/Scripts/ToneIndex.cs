@@ -7,6 +7,11 @@ public class ToneIndex : MonoBehaviour
     [SerializeField] public GameObject TactLine;
     public int indexPosition = 4;
     [SerializeField] public GameObject[] Slots;
+
+    private void OnEnable()
+    {
+        TactLine.transform.position = Slots[5].transform.position; ;
+    }
     public void moveIndex()
     {
         if(indexPosition <= 5)
