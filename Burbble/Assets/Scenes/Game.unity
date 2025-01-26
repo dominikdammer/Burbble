@@ -4791,9 +4791,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5635,6 +5635,9 @@ MonoBehaviour:
   WrongPitch: 1
   toneIndex: {fileID: 68669856}
   tonePositioning: {fileID: 2113915970}
+  correctTone: 0
+  targetVolume: 0
+  correctDrinks: 
 --- !u!4 &836896061
 Transform:
   m_ObjectHideFlags: 0

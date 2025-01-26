@@ -48,11 +48,11 @@ public class Game : MonoBehaviour
     [SerializeField] private TonePositioning tonePositioning;
     public int correctTone = 0;
     public float targetVolume;
-    private bool[] previousMatchState;
+    public bool[] correctDrinks;
 
     void Start()
     {
-        previousMatchState = new bool[FishSlotTone.Length];
+        correctDrinks = new bool[FishSlotTone.Length];
         LoadLevel();
         burpSound = GetComponent<AudioSource>();
         StartPitch = burpSound.pitch;
@@ -119,6 +119,7 @@ public class Game : MonoBehaviour
         tonePositioning.PositionShells(TargetTone);
         tonePositioning.ResetBubbles();
         ////Debug.Log("New Level loaded");
+        ResetLevelMusic();
     }
 
     public void LoadNextLevel()
@@ -214,13 +215,14 @@ public class Game : MonoBehaviour
                     {
                         
 
-                        
+                        correctDrinks[i] = true;
                         tonePositioning.BubbleColor = Color.green;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                         
                     }
                     else
                     {
+                        correctDrinks[i] = false;
                         //burpSound.pitch = WrongPitch;
                         //StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
 
@@ -254,25 +256,10 @@ public class Game : MonoBehaviour
                 // FishSlots[i].GetComponent<FloatingObject>().amplitude = .1f;
                 FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.1f);
 
-                // bool isMatch = FishSlot[i] == arr2[i];
+                correctTone = CountCorrectDrinks(correctDrinks);
 
-                // // If the match state has changed (from false to true or vice versa), adjust matchCount
-                // if (isMatch != previousMatchState[i])
-                // {
-                //     if (isMatch)
-                //     {
-                //         correctTone++; // Increment match count when the match is found
-                //     }
-                //     else
-                //     {
-                //         correctTone--; // Decrement match count when the match is lost
-                //     }
-
-                //     // Update the previous match state
-                //     previousMatchState[i] = isMatch;
-                // }
-                // targetVolume = (correctTone / (float)FishSlot.Length) * 1.0f;
-                // jukeBox.volume =  targetVolume;
+                targetVolume = (correctTone / (float)FishSlot.Length) * 1.0f;
+                jukeBox.volume =  targetVolume;
             }
             
             if (allMatch && AllDrinksCollected())
@@ -294,6 +281,28 @@ public class Game : MonoBehaviour
         }
         
     }
+
+    public void ResetLevelMusic()
+    {
+        for(int i = 0; i < correctDrinks.Length; i++)
+        {
+            correctDrinks[i] = false;
+        }
+        jukeBox.volume =  0f;
+    }
+
+    int CountCorrectDrinks(bool[] boolArray)
+{
+    int count = 0;
+    foreach (bool value in boolArray)
+    {
+        if (value)
+        {
+            count++;
+        }
+    }
+    return count;
+}
 
     private bool AllDrinksCollected()
     {
