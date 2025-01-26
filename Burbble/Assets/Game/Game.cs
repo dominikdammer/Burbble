@@ -153,6 +153,10 @@ public class Game : MonoBehaviour
 
             for (int i = 0; i < FishSlot.Length; i++)
             {
+                if(FishFinalSound[i] > 5)
+                {
+                    FishFinalSound[i] = 5;
+                }
                 toneIndex.moveIndex();
                 if (gotDrink[i])
                 {
