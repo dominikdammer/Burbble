@@ -10,6 +10,6 @@ public class Level : ScriptableObject
     public int[] intZieltone = new int[6];
 
     [Header("UI-Asset")]
-    public Sprite uiImage;
+    public GameObject[] ToneIndicatorBubble = new GameObject[6];
 }
 

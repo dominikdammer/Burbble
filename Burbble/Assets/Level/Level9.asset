@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intFischarten: 020000000300000001000000020000000100000001000000
   intZieltone: 050000000400000003000000020000000100000004000000
-  uiImage: {fileID: 0}
+  ToneIndicatorBubble:
+  - {fileID: 2369316648780654016, guid: c9e7575ab447359448da0d77d838bb77, type: 3}
+  - {fileID: 6734255442944414075, guid: b8bba4d4c19f2be45ac6c6b77632dea2, type: 3}
+  - {fileID: 5829414638032714332, guid: cbcbacba18cb54a4bbbf91e96756ebc7, type: 3}
+  - {fileID: 6989065731573567128, guid: da2a5c2b88eda6944a178cb52062a320, type: 3}
+  - {fileID: 8224868438123305101, guid: df0f3a9abeb5bdb40b928e878a862eaf, type: 3}
