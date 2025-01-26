@@ -89,8 +89,10 @@ public class Game : MonoBehaviour
         for (int i = 0; i < TargetTone.Length; i++)
         {
             TargetTone[i] = levels[LevelIndex].intZieltone[i];
-            
-            
+        }
+        for(int i = 0; i < gotDrink.Length; i++)
+        {
+            gotDrink[i] = false;
         }
         tonePositioning.PositionShells(TargetTone);
         tonePositioning.ResetBubbles();
