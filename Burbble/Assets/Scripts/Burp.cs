@@ -19,7 +19,7 @@ public class Burp : MonoBehaviour
     private void Start()
     {
         burpy.clip = burpSounds[Random.Range(0, burpSounds.Length)];
-        DoBurp();
+        //DoBurp();
     }
     public void DoBurp()
     {
