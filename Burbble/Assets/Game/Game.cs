@@ -174,8 +174,9 @@ public class Game : MonoBehaviour
                     }
                     else
                     {
-                        burpSound.pitch = WrongPitch;
-                        StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
+                        //burpSound.pitch = WrongPitch;
+                        //StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
+
                         tonePositioning.BubbleColor = Color.red;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }

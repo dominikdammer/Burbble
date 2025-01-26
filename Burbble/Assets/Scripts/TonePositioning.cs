@@ -19,48 +19,48 @@ public class TonePositioning : MonoBehaviour
                 {
                     //Shells[i].transform.position = ToneTransform[i].position;
                     //Debug.Log("TonePosition" + i);
-                    Shells[x].transform.SetParent(ToneTransform[i-1]);
-                    Shells[x].transform.position = ToneTransform[i-1].position;
+                    Shells[x].transform.SetParent(ToneTransform[i - 1]);
+                    Shells[x].transform.position = ToneTransform[i - 1].position;
 
                     //Shells[x].gameObject.SetActive(true);
 
                 }
             }
         }
-        
+
     }
 
     public void PositionBubbles(int FishFinalSound, int x)
     {
-            for (int i = 0; i <= ToneTransform.Length; i++)
+        for (int i = 0; i <= ToneTransform.Length; i++)
+        {
+            if (i == FishFinalSound + 5 * x)
             {
-                if (i == FishFinalSound + 5 * x)
+                //Shells[i].transform.position = ToneTransform[i].position;
+                //Debug.Log("TonePosition" + i);
+                Bubbles[x].transform.SetParent(ToneTransform[i - 1]);
+                Bubbles[x].transform.position = ToneTransform[i - 1].position;
+
+                if (!Bubbles[x].gameObject.activeSelf)
                 {
-                    //Shells[i].transform.position = ToneTransform[i].position;
-                    Debug.Log("TonePosition" + i);
-                    Bubbles[x].transform.SetParent(ToneTransform[i-1]);
-                    Bubbles[x].transform.position = ToneTransform[i-1].position;
-
-                    if(!Bubbles[x].gameObject.activeSelf)
-                    {
-                        Bubbles[x].gameObject.SetActive(true);
-                    }
-                    Bubbles[x].GetComponent<SpriteRenderer>().color = BubbleColor;
-
-                    //Shells[x].gameObject.SetActive(true);
-
+                    Bubbles[x].gameObject.SetActive(true);
                 }
+                Bubbles[x].GetComponent<SpriteRenderer>().color = BubbleColor;
+
+                //Shells[x].gameObject.SetActive(true);
+
             }
+        }
     }
     public void ResetBubbles()
     {
         for (int i = 0; i < Bubbles.Length; i++)
         {
-            if(Bubbles[i].gameObject.activeSelf)
+            if (Bubbles[i].gameObject.activeSelf)
             {
                 Bubbles[i].gameObject.SetActive(false);
             }
         }
-        
+
     }
 }
