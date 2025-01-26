@@ -15,6 +15,13 @@ public class Game : MonoBehaviour
     public GameObject[] FishSlots;
     [SerializeField] public Sprite[] FishSprites;
     [SerializeField] public AudioClip[] burps;
+    [SerializeField]
+    GameObject SFX;
+    [SerializeField] Animator NextLevelAnimation;
+    [SerializeField] AudioSource nextLevelSound;
+    [SerializeField] AudioSource levelClearSound;
+    [SerializeField] AudioSource slurpSound;
+    [SerializeField] AudioSource serveDrinkSound;
     public float delay = 1.0f;
 
     public bool[] gotDrink;
@@ -54,7 +61,7 @@ public class Game : MonoBehaviour
            FishFinalSound[i] = FishSlotTone[i] + DrinkValue[i];
         }
 
-        Debug.Log("Array comparison complete.");
+        ////Debug.Log("Array comparison complete.");
     }
 
     public void AssigneDrink(int Index)
@@ -62,6 +69,7 @@ public class Game : MonoBehaviour
         DrinkValue[Index] = mix.GetDrinkValue();
         mix.ResetDrink();
         gotDrink[Index] = true;
+        serveDrinkSound.Play();
     }
 
     public void LoadLevel()
@@ -94,9 +102,12 @@ public class Game : MonoBehaviour
         {
             gotDrink[i] = false;
         }
+
+        nextLevelSound.Play();
+        NextLevelAnimation.StartPlayback();
         tonePositioning.PositionShells(TargetTone);
         tonePositioning.ResetBubbles();
-        Debug.Log("New Level loaded");
+        ////Debug.Log("New Level loaded");
     }
 
     public void LoadNextLevel()
@@ -120,7 +131,7 @@ public class Game : MonoBehaviour
             
             if (FishFinalSound.Length != arr2.Length)
             {
-                Debug.LogError("Arrays have different lengths!");
+                //Debug.LogError("Arrays have different lengths!");
                 yield break;
             }
             
@@ -168,7 +179,10 @@ public class Game : MonoBehaviour
                         tonePositioning.BubbleColor = Color.red;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }
+                    slurpSound.Play();
+                    yield return new WaitForSeconds(1);
                     burpSound.Play();
+
                     FishSlots[i].GetComponent<Burp>().DoBurp();
 
                 }
@@ -179,16 +193,16 @@ public class Game : MonoBehaviour
                 }
                 if (FishFinalSound[i] == arr2[i])
                 {
-                    Debug.Log($"Match found at index {i}: {FishFinalSound[i]}");
+                    ////Debug.Log($"Match found at index {i}: {FishFinalSound[i]}");
 
                 }
                 else
                 {
                     allMatch = false;
-                    Debug.Log($"No match at index {i}: {FishFinalSound[i]} != {arr2[i]}");
+                    ////Debug.Log($"No match at index {i}: {FishFinalSound[i]} != {arr2[i]}");
                 }
 
-                Debug.Log("Array comparison complete.");
+                ////Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
                 // FishSlots[i].GetComponent<FloatingObject>().amplitude = .1f;
                 FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.1f);
@@ -197,16 +211,17 @@ public class Game : MonoBehaviour
             if (allMatch && AllDrinksCollected())
             {
                 LevelClear = true;
+                levelClearSound.Play();
                 //EmptyFishSlots(FishSlotTone);
-                Debug.Log("All elements match! Level clear!");
+                // //Debug.Log("All elements match! Level clear!");
                 LoadNextLevel();
             }
             else
             {
                 LevelClear = false;
-                Debug.Log("Not all elements match. Level not clear.");
+                ////Debug.Log("Not all elements match. Level not clear.");
             }
-            
+
         }
     }
 

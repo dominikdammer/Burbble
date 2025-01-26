@@ -21,28 +21,28 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         if (targetObject != null)
         {
             MixerCanvas = targetObject.transform;
-            Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
+            //Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
         }
         else
         {
-            Debug.LogError("TargetObject not found in the scene!");
+            //Debug.LogError("TargetObject not found in the scene!");
         }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("begin drag");
+        //Debug.Log("begin drag");
         parentAfterDrag = transform.parent;
         GameObject targetObject = GameObject.Find("CanvasMixer");
 
         if (targetObject != null)
         {
             MixerCanvas = targetObject.transform;
-            Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
+            //Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
         }
         else
         {
-            Debug.LogError("TargetObject not found in the scene!");
+            //Debug.LogError("TargetObject not found in the scene!");
         }
         transform.SetParent(MixerCanvas);
         transform.SetAsLastSibling();
@@ -59,7 +59,7 @@ public class Ingredient : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("end drag");
+        //Debug.Log("end drag");
         transform.SetParent(parentAfterDrag);
         ImageIngredient.raycastTarget = true;
     }

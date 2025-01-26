@@ -22,11 +22,11 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         if (targetObject != null)
         {
             MixerCanvas = targetObject.transform;
-            Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
+            //Debug.Log("Found Transform of TargetObject at: " + MixerCanvas.position);
         }
         else
         {
-            Debug.LogError("TargetObject not found in the scene!");
+            //Debug.LogError("TargetObject not found in the scene!");
         }
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -35,7 +35,8 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         {
             return;
         }
-        Debug.Log("begin drag");
+        //Debug.Log("begin drag");
+        //transform.parent.GetComponent<Image>().enabled = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(MixerCanvas);
         transform.SetAsLastSibling();
@@ -56,7 +57,8 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("end drag");
+        //Debug.Log("end drag");
+        //parentAfterDrag.gameObject.GetComponent<Image>().enabled = true;
         transform.SetParent(parentAfterDrag);
         if (!CanDrag)
         {
@@ -72,6 +74,7 @@ public class DrinkScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void ResetDrink()
     {
         DrinkValue = 0;
+       // parentAfterDrag.gameObject.GetComponent<Image>().enabled = true;
         Destroy(gameObject);
     }
 }

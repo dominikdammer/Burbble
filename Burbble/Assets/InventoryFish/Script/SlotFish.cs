@@ -38,7 +38,7 @@ public class SlotFish : MonoBehaviour, IDropHandler
 
         if (draggableItem == null)
         {
-            Debug.LogError("Dropped object does not have a DrinkScript attached.");
+            //Debug.LogError("Dropped object does not have a DrinkScript attached.");
             return;
         }
         if(transform.childCount == 0)
@@ -47,7 +47,7 @@ public class SlotFish : MonoBehaviour, IDropHandler
             draggableItem.CanDrag = false;
         }
         else{
-            Debug.Log("destroy drink");
+            //Debug.Log("destroy drink");
             Transform existingChild = transform.GetChild(0);
             existingChild.gameObject.GetComponent<DrinkScript>().ResetDrink();
             //Destroy(existingChild.gameObject);

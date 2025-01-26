@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Mix : MonoBehaviour, IDropHandler
 {
@@ -9,6 +10,8 @@ public class Mix : MonoBehaviour, IDropHandler
     // Aktueller Drink-Wert
     public int currentDrinkValue = 0;
     [SerializeField] private int ingredientCount = 1;
+    [SerializeField]
+    Slider slider;
 
     // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzuf�gen
     public void AddToDrinkValue(int value)
@@ -16,12 +19,14 @@ public class Mix : MonoBehaviour, IDropHandler
         if (ingredientCount < 3)
         {
             currentDrinkValue += value;
-            Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
+            //Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
             ingredientCount++;
+            slider.value =  1/3 * ingredientCount;
+            //Debug.LogError("slider.value" + slider.value);
         }
         else
         {
-            Debug.Log($"Zu viele Zutaten");
+            //Debug.Log($"Zu viele Zutaten");
         }
     }
 
@@ -29,6 +34,7 @@ public class Mix : MonoBehaviour, IDropHandler
     {
         currentDrinkValue = 0;
         ingredientCount = 1;
+        slider.value = 0;
     }
     public int GetDrinkValue()
     {

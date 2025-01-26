@@ -18,7 +18,7 @@ public class TonePositioning : MonoBehaviour
                 if (i == FishSlotTone[x] + 5 * x)
                 {
                     //Shells[i].transform.position = ToneTransform[i].position;
-                    //Debug.Log("TonePosition" + i);
+                    ////Debug.Log("TonePosition" + i);
                     Shells[x].transform.SetParent(ToneTransform[i]);
                     Shells[x].transform.position = ToneTransform[i].position;
 
@@ -37,7 +37,7 @@ public class TonePositioning : MonoBehaviour
                 if (i == FishFinalSound + 5 * x)
                 {
                     //Shells[i].transform.position = ToneTransform[i].position;
-                    Debug.Log("TonePosition" + i);
+                    //Debug.Log("TonePosition" + i);
                     Bubbles[x].transform.SetParent(ToneTransform[i]);
                     Bubbles[x].transform.position = ToneTransform[i].position;
 
