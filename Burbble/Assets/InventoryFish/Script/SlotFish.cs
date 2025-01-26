@@ -13,6 +13,14 @@ public class SlotFish : MonoBehaviour, IDropHandler
     private Image DrinkImage;
 
     [SerializeField] DrinkColorChanger drinkColorChanger;
+
+    public void Update()
+    {
+        if(game.LevelClear)
+        {
+            drinkColorChanger.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;

@@ -35,6 +35,7 @@ public class Game : MonoBehaviour
     [SerializeField] private float WrongPitch = 1f;
 
     public ToneIndex toneIndex;
+    [SerializeField] private TonePositioning tonePositioning;
     
 
     void Start()
@@ -66,7 +67,8 @@ public class Game : MonoBehaviour
     public void LoadLevel()
     {
         for (int i = 0; i < FishSlotTone.Length; i++)
-        {
+        {   
+            
             FishSlotTone[i] = levels[LevelIndex].intFischarten[i];
             if(FishSlotTone[i] == 1)
             {
@@ -88,6 +90,12 @@ public class Game : MonoBehaviour
         {
             TargetTone[i] = levels[LevelIndex].intZieltone[i];
         }
+        for(int i = 0; i < gotDrink.Length; i++)
+        {
+            gotDrink[i] = false;
+        }
+        tonePositioning.PositionShells(TargetTone);
+        tonePositioning.ResetBubbles();
         Debug.Log("New Level loaded");
     }
 
@@ -150,16 +158,18 @@ public class Game : MonoBehaviour
                     if (FishFinalSound[i] == arr2[i])
                     {
                         burpSound.pitch = StartPitch;
+                        tonePositioning.BubbleColor = Color.green;
                     }
                     else
                     {
                         burpSound.pitch = WrongPitch;
                         StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
+                        tonePositioning.BubbleColor = Color.red;
                     }
                     burpSound.Play();
                     FishSlots[i].GetComponent<Burp>().DoBurp();
 
-
+                    tonePositioning.PositionBubbles(FishFinalSound[i], i);
 
                 }
                 if (gotDrink[i])
