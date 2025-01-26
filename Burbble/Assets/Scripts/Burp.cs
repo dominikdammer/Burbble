@@ -25,7 +25,7 @@ public class Burp : MonoBehaviour
     {
         Instantiate(bubbleEffect,burpPos.transform.position,Quaternion.identity);
         bubbleEffect.Play();
-       // CameraShaker.Instance.ShakeOnce(magn, rough, fadeIn, fadeOut);
+        //CameraShaker.Instance.ShakeOnce(magn, rough, fadeIn, fadeOut);
         if (burpy != null)
 
             burpy.Play();
