@@ -24,8 +24,13 @@ public class SlotFish : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
-        DrinkScript draggableItem = dropped.GetComponent<DrinkScript>();
-        drinkColorChanger.ChangeColor(draggableItem.DrinkValue);
+        DrinkScript draggableItem = null;
+        if(dropped.GetComponent<DrinkScript>())
+        {
+            draggableItem = dropped.GetComponent<DrinkScript>();
+            drinkColorChanger.ChangeColor(draggableItem.DrinkValue);
+        
+        
 
         
 
@@ -56,5 +61,6 @@ public class SlotFish : MonoBehaviour, IDropHandler
         }
         game.AddDrinkToFish();
         mix.ResetDrink();
+    }
     }
 }
