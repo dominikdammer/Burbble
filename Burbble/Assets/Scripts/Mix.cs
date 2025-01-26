@@ -10,8 +10,8 @@ public class Mix : MonoBehaviour, IDropHandler
     // Aktueller Drink-Wert
     public int currentDrinkValue = 0;
     [SerializeField] private int ingredientCount = 1;
-    [SerializeField]
-    Slider slider;
+    [SerializeField]Slider slider;
+    [SerializeField] AudioSource mixerSound;
 
     // Methode, um einen Wert zum aktuellen Drink-Wert hinzuzuf�gen
     public void AddToDrinkValue(int value)
@@ -23,6 +23,7 @@ public class Mix : MonoBehaviour, IDropHandler
             ingredientCount++;
             slider.value =  ((float)ingredientCount /3) /1f;;
             //Debug.LogError("slider.value" + slider.value);
+            mixerSound.Play();
         }
         else
         {

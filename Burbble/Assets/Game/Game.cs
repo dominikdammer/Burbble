@@ -49,6 +49,7 @@ public class Game : MonoBehaviour
     public int correctTone = 0;
     public float targetVolume;
     public bool[] correctDrinks;
+    float initialVolume = 0.35f;
 
     void Start()
     {
@@ -57,6 +58,7 @@ public class Game : MonoBehaviour
         burpSound = GetComponent<AudioSource>();
         StartPitch = burpSound.pitch;
         StartCoroutine(CompareArraysWithDelay(FishFinalSound, TargetTone, delay));
+        jukeBox.volume = initialVolume;
     }
 
 
@@ -113,9 +115,10 @@ public class Game : MonoBehaviour
         }
         jukeBox.clip = levels[LevelIndex].LevelMusic;
         jukeBox.Play();
+        jukeBox.volume = initialVolume;
 
         nextLevelSound.Play();
-        NextLevelAnimation.StartPlayback();
+        NextLevelAnimation.Play("NextLevel", 0, 0);
         tonePositioning.PositionShells(TargetTone);
         tonePositioning.ResetBubbles();
         ////Debug.Log("New Level loaded");
@@ -292,7 +295,7 @@ public class Game : MonoBehaviour
         {
             correctDrinks[i] = false;
         }
-        jukeBox.volume =  0f;
+        jukeBox.volume = initialVolume; 
     }
 
     int CountCorrectDrinks(bool[] boolArray)
