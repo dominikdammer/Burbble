@@ -29,8 +29,12 @@ public class Game : MonoBehaviour
 
     AudioSource burpSound;
 
+    Burp burp;
+
     private float StartPitch;
     [SerializeField] private float WrongPitch = 1f;
+
+    public ToneIndex toneIndex;
     
 
     void Start()
@@ -105,12 +109,12 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
+            
             if (FishFinalSound.Length != arr2.Length)
             {
                 Debug.LogError("Arrays have different lengths!");
                 yield break;
             }
-
             
             bool allMatch = true;
 
@@ -118,6 +122,7 @@ public class Game : MonoBehaviour
 
             for (int i = 0; i < FishSlot.Length; i++)
             {
+                toneIndex.moveIndex();
                 if (gotDrink[i])
                 {
                     switch (FishFinalSound[i])
@@ -152,7 +157,10 @@ public class Game : MonoBehaviour
                         StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
                     }
                     burpSound.Play();
-                    
+                    FishSlots[i].GetComponent<Burp>().DoBurp();
+
+
+
                 }
                 if (gotDrink[i])
                 {
