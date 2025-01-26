@@ -159,17 +159,17 @@ public class Game : MonoBehaviour
                     {
                         burpSound.pitch = StartPitch;
                         tonePositioning.BubbleColor = Color.green;
+                        tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }
                     else
                     {
                         burpSound.pitch = WrongPitch;
                         StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
                         tonePositioning.BubbleColor = Color.red;
+                        tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }
                     burpSound.Play();
                     FishSlots[i].GetComponent<Burp>().DoBurp();
-
-                    tonePositioning.PositionBubbles(FishFinalSound[i], i);
 
                 }
                 if (gotDrink[i])
@@ -188,13 +188,12 @@ public class Game : MonoBehaviour
                     Debug.Log($"No match at index {i}: {FishFinalSound[i]} != {arr2[i]}");
                 }
 
-                
-
                 Debug.Log("Array comparison complete.");
                 yield return new WaitForSeconds(delayTime);
                 // FishSlots[i].GetComponent<FloatingObject>().amplitude = .1f;
                 FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.1f);
             }
+            
             if (allMatch && AllDrinksCollected())
             {
                 LevelClear = true;
