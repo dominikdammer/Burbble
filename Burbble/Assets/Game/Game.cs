@@ -23,6 +23,7 @@ public class Game : MonoBehaviour
     [SerializeField] AudioSource levelClearSound;
     [SerializeField] AudioSource slurpSound;
     [SerializeField] AudioSource serveDrinkSound;
+    [SerializeField] AudioSource jukeBox;
     public float delay = 1.0f;
 
     public bool[] gotDrink;
@@ -103,6 +104,8 @@ public class Game : MonoBehaviour
         {
             gotDrink[i] = false;
         }
+        jukeBox.clip = levels[LevelIndex].LevelMusic;
+        jukeBox.Play();
 
         nextLevelSound.Play();
         NextLevelAnimation.StartPlayback();
@@ -205,6 +208,7 @@ public class Game : MonoBehaviour
                         //burpSound.pitch = StartPitch;
                         tonePositioning.BubbleColor = Color.green;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
+                        
                     }
                     else
                     {

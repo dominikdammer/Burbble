@@ -11,5 +11,8 @@ public class Level : ScriptableObject
 
     [Header("UI-Asset")]
     public GameObject[] ToneIndicatorBubble = new GameObject[6];
+
+    [Header("Level Music")]
+    public AudioClip LevelMusic;
 }
 

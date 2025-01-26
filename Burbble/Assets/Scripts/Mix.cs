@@ -21,7 +21,7 @@ public class Mix : MonoBehaviour, IDropHandler
             currentDrinkValue += value;
             //Debug.Log($"Neuer Drink-Wert: {currentDrinkValue}");
             ingredientCount++;
-            slider.value =  1/3 * ingredientCount;
+            slider.value =  ((float)ingredientCount /3) /1f;;
             //Debug.LogError("slider.value" + slider.value);
         }
         else
