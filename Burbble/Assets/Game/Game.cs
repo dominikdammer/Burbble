@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -45,10 +46,13 @@ public class Game : MonoBehaviour
 
     public ToneIndex toneIndex;
     [SerializeField] private TonePositioning tonePositioning;
-    
+    public int correctTone = 0;
+    public float targetVolume;
+    private bool[] previousMatchState;
 
     void Start()
     {
+        previousMatchState = new bool[FishSlotTone.Length];
         LoadLevel();
         burpSound = GetComponent<AudioSource>();
         StartPitch = burpSound.pitch;
@@ -66,12 +70,15 @@ public class Game : MonoBehaviour
         ////Debug.Log("Array comparison complete.");
     }
 
-    public void AssigneDrink(int Index)
+    public IEnumerator AssigneDrink(int Index)
     {
         DrinkValue[Index] = mix.GetDrinkValue();
         mix.ResetDrink();
         gotDrink[Index] = true;
         serveDrinkSound.Play();
+        yield return new WaitForSeconds(1);
+        slurpSound.Play();
+        
     }
 
     public void LoadLevel()
@@ -205,7 +212,9 @@ public class Game : MonoBehaviour
                     }
                     if (FishFinalSound[i] == arr2[i])
                     {
-                        //burpSound.pitch = StartPitch;
+                        
+
+                        
                         tonePositioning.BubbleColor = Color.green;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                         
@@ -218,8 +227,7 @@ public class Game : MonoBehaviour
                         tonePositioning.BubbleColor = Color.red;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }
-                    slurpSound.Play();
-                    yield return new WaitForSeconds(1);
+                    
                     burpSound.Play();
 
                     FishSlots[i].GetComponent<Burp>().DoBurp();
@@ -245,6 +253,26 @@ public class Game : MonoBehaviour
                 yield return new WaitForSeconds(delayTime);
                 // FishSlots[i].GetComponent<FloatingObject>().amplitude = .1f;
                 FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.1f);
+
+                // bool isMatch = FishSlot[i] == arr2[i];
+
+                // // If the match state has changed (from false to true or vice versa), adjust matchCount
+                // if (isMatch != previousMatchState[i])
+                // {
+                //     if (isMatch)
+                //     {
+                //         correctTone++; // Increment match count when the match is found
+                //     }
+                //     else
+                //     {
+                //         correctTone--; // Decrement match count when the match is lost
+                //     }
+
+                //     // Update the previous match state
+                //     previousMatchState[i] = isMatch;
+                // }
+                // targetVolume = (correctTone / (float)FishSlot.Length) * 1.0f;
+                // jukeBox.volume =  targetVolume;
             }
             
             if (allMatch && AllDrinksCollected())
@@ -261,7 +289,10 @@ public class Game : MonoBehaviour
                 ////Debug.Log("Not all elements match. Level not clear.");
             }
 
+            
+
         }
+        
     }
 
     private bool AllDrinksCollected()

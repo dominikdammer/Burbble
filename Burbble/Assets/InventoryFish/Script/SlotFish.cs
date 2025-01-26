@@ -34,7 +34,7 @@ public class SlotFish : MonoBehaviour, IDropHandler
         tempColor.a = 0f;
         DrinkImage.color = tempColor;
         
-        game.AssigneDrink(IndexFish);
+        StartCoroutine(game.AssigneDrink(IndexFish));
 
         if (draggableItem == null)
         {
