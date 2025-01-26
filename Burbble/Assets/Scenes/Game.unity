@@ -4959,6 +4959,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 72c2427102bf99c4f9d041bf8aa58ba8, type: 3}
   - {fileID: 8300000, guid: cbf35b0512283a24bbc1c820117ce4f3, type: 3}
   - {fileID: 8300000, guid: 1f5f20313f24436488e83c0a732dfd7d, type: 3}
+  wrongBurps:
+  - {fileID: 8300000, guid: 600c210e20a7a4e43bcbe0bcad6b2844, type: 3}
+  - {fileID: 8300000, guid: f80c9fc4401a5b54985aca593169f86a, type: 3}
+  - {fileID: 8300000, guid: 5af8904595f318048b0c5d5a2556cc56, type: 3}
+  - {fileID: 8300000, guid: 5e4cc662093a1fe49adf022a25ccaec2, type: 3}
+  - {fileID: 8300000, guid: 6c2a4e4e87d0e0e4f8f471f8edfe7c58, type: 3}
   SFX: {fileID: 1057720033}
   NextLevelAnimation: {fileID: 391299585}
   nextLevelSound: {fileID: 1057720035}

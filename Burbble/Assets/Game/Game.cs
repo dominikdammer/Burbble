@@ -15,6 +15,7 @@ public class Game : MonoBehaviour
     public GameObject[] FishSlots;
     [SerializeField] public Sprite[] FishSprites;
     [SerializeField] public AudioClip[] burps;
+    [SerializeField] public AudioClip[] wrongBurps;
     [SerializeField]
     GameObject SFX;
     [SerializeField] Animator NextLevelAnimation;
@@ -147,28 +148,61 @@ public class Game : MonoBehaviour
                     switch (FishFinalSound[i])
                     {
                         case 1:
-                            burpSound.clip = burps[0];
+                            if (FishFinalSound[i] == arr2[i])
+                            {
+                                burpSound.clip = burps[0];
+                            }
+                            else
+                            {
+                                burpSound.clip = wrongBurps[0];
+                            }
                             break;
                         case 2:
-                            burpSound.clip = burps[1];
+                            if (FishFinalSound[i] == arr2[i])
+                            {
+                                burpSound.clip = burps[1];
+                            }
+                            else
+                            {
+                                burpSound.clip = wrongBurps[1];
+                            }
                             break;
                         case 3:
+                        if (FishFinalSound[i] == arr2[i])
+                        {
                             burpSound.clip = burps[2];
+                        }
+                        else{
+                            burpSound.clip = wrongBurps[2];
+                        }
                             break;
                         case 4:
+                        if (FishFinalSound[i] == arr2[i])
+                        {
                             burpSound.clip = burps[3];
+                        }
+                        else
+                        {
+                            burpSound.clip = wrongBurps[3];
+                        }
                             break;
                         case 5:
+                        if (FishFinalSound[i] == arr2[i])
+                        {
                             burpSound.clip = burps[4];
+                        }
+                        else
+                        {
+                            burpSound.clip = wrongBurps[4];
+                        }
                             break;
-
                         default:
                             burpSound.clip = burps[0];
                             break;
                     }
                     if (FishFinalSound[i] == arr2[i])
                     {
-                        burpSound.pitch = StartPitch;
+                        //burpSound.pitch = StartPitch;
                         tonePositioning.BubbleColor = Color.green;
                         tonePositioning.PositionBubbles(FishFinalSound[i], i);
                     }
