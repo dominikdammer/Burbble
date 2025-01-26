@@ -171,6 +171,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 0
+  upwardSpeed: 2
 --- !u!212 &42907858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -828,6 +829,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &172649345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1190,6 +1192,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &316296268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2399,6 +2402,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &598711408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2940,6 +2944,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &690258867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3213,6 +3218,7 @@ MonoBehaviour:
   DrinkValue: 000000000000000000000000000000000000000000000000
   LevelIndex: 0
   mix: {fileID: 850557483}
+  WrongPitch: 1.2
 --- !u!4 &836896061
 Transform:
   m_ObjectHideFlags: 0
@@ -3595,6 +3601,7 @@ MonoBehaviour:
   - {fileID: 835969198}
   - {fileID: 1002071187}
   currentDrinkValue: 0
+  ingredientCount: 1
 --- !u!114 &850557484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,6 +5104,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &1169635094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5606,6 +5614,7 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   prewarm: 1
+  upwardSpeed: 2
 --- !u!212 &1249774484
 SpriteRenderer:
   m_ObjectHideFlags: 0

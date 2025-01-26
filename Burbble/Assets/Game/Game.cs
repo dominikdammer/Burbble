@@ -28,12 +28,16 @@ public class Game : MonoBehaviour
     public Mix mix;
 
     AudioSource burpSound;
+
+    private float StartPitch;
+    [SerializeField] private float WrongPitch = 1f;
     
 
     void Start()
     {
         LoadLevel();
         burpSound = GetComponent<AudioSource>();
+        StartPitch = burpSound.pitch;
         StartCoroutine(CompareArraysWithDelay(FishFinalSound, TargetTone, delay));
     }
 
@@ -138,6 +142,15 @@ public class Game : MonoBehaviour
                             burpSound.clip = burps[0];
                             break;
                     }
+                    if (FishFinalSound[i] == arr2[i])
+                    {
+                        burpSound.pitch = StartPitch;
+                    }
+                    else
+                    {
+                        burpSound.pitch = WrongPitch;
+                        StartCoroutine(ChangePitchOverTime(burpSound, WrongPitch, StartPitch, delayTime));
+                    }
                     burpSound.Play();
                     
                 }
@@ -187,5 +200,17 @@ public class Game : MonoBehaviour
             if (!drink) return false;
         }
         return true;
+    }
+
+    private IEnumerator ChangePitchOverTime(AudioSource audioSource, float startPitch, float targetPitch, float duration)
+    {
+        float timeElapsed = 0f;
+        while (timeElapsed < duration)
+        {
+            audioSource.pitch = Mathf.Lerp(startPitch, targetPitch, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+        audioSource.pitch = targetPitch; // Ensure the final pitch is exactly the target pitch
     }
 }
