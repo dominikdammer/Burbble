@@ -139,12 +139,12 @@ public class Game : MonoBehaviour
         LevelClear = false;
     }
 
-    private IEnumerator CompareArraysWithDelay(int[] FishSlot, int[] arr2, float delayTime)
+    private IEnumerator CompareArraysWithDelay(int[] FishSlot, int[] FishCurrentSound, float delayTime)
     {
         while (true)
         {
             
-            if (FishFinalSound.Length != arr2.Length)
+            if (FishFinalSound.Length != FishCurrentSound.Length)
             {
                 //Debug.LogError("Arrays have different lengths!");
                 yield break;
@@ -166,7 +166,7 @@ public class Game : MonoBehaviour
                     switch (FishFinalSound[i])
                     {
                         case 1:
-                            if (FishFinalSound[i] == arr2[i])
+                            if (FishFinalSound[i] == FishCurrentSound[i])
                             {
                                 burpSound.clip = burps[0];
                             }
@@ -176,7 +176,7 @@ public class Game : MonoBehaviour
                             }
                             break;
                         case 2:
-                            if (FishFinalSound[i] == arr2[i])
+                            if (FishFinalSound[i] == FishCurrentSound[i])
                             {
                                 burpSound.clip = burps[1];
                             }
@@ -186,7 +186,7 @@ public class Game : MonoBehaviour
                             }
                             break;
                         case 3:
-                        if (FishFinalSound[i] == arr2[i])
+                        if (FishFinalSound[i] == FishCurrentSound[i])
                         {
                             burpSound.clip = burps[2];
                         }
@@ -195,7 +195,7 @@ public class Game : MonoBehaviour
                         }
                             break;
                         case 4:
-                        if (FishFinalSound[i] == arr2[i])
+                        if (FishFinalSound[i] == FishCurrentSound[i])
                         {
                             burpSound.clip = burps[3];
                         }
@@ -205,7 +205,7 @@ public class Game : MonoBehaviour
                         }
                             break;
                         case 5:
-                        if (FishFinalSound[i] == arr2[i])
+                        if (FishFinalSound[i] == FishCurrentSound[i])
                         {
                             burpSound.clip = burps[4];
                         }
@@ -218,7 +218,7 @@ public class Game : MonoBehaviour
                             burpSound.clip = burps[0];
                             break;
                     }
-                    if (FishFinalSound[i] == arr2[i])
+                    if (FishFinalSound[i] == FishCurrentSound[i])
                     {
                         
 
@@ -247,7 +247,7 @@ public class Game : MonoBehaviour
                     // FishSlots[i].GetComponent<FloatingObject>().amplitude = .5f;
                     FishSlots[i].GetComponent<FloatingObject>().SetAmplitude(0.5f);
                 }
-                if (FishFinalSound[i] == arr2[i])
+                if (FishFinalSound[i] == FishCurrentSound[i])
                 {
                     ////Debug.Log($"Match found at index {i}: {FishFinalSound[i]}");
 
